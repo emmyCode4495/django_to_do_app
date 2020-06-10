@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'Registration/main.css' %}" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <nav class="all-nav">
+            <h1 id="head">To-do App</h1>
+            {% if user.is_authenticated %}
+                <p id="auth">Logged in as {{ user.username }}</p>
+            {% endif %}
+            <div class="table">
+                <ul id="hor-list">
+                    {% if user.is_authenticated %}
+                        <li><a class="hd-lnk" href="{% url 'add_task' %}">Home</a></li>
+                        <li><a class="hd-lnk" href="{% url 'about_page' %}">About</a></li>
+                        <li><a class="hd-lnk" href="{% url 'logout_page' %}">Log out</a></li>
+                    {%  else %}
+                        <li><a class="hd-lnk" href="{% url 'add_task' %}">Home</a></li>
+                        <li><a class="hd-lnk" href="{% url 'about_page' %}">About</a></li>
+                        <li><a class="hd-lnk" href="{% url 'login_page' %}">Log in</a></li>
+                        <li><a class="hd-lnk" href="{% url 'signup_page' %}">Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <footer class="foot-intr">
+        <p>designed by #emmyCode</p>
+        <p>&copy; 2020</p>
+    </footer>
+</body>
+</html>

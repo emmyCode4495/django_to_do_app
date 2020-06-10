@@ -1,0 +1,33 @@
+{% extends 'Registration/base.html' %}
+
+{% block title %}Task{% endblock %}
+
+{% block content %}
+<div id="task-id">
+    <h1 id="tsk">Tasks</h1>
+    <p>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.title}}
+            <input id="size" type="submit" >
+        </form>
+    </p>
+    {% for tasks in task %}
+        <div class="action">
+            <a id="updt" href="{% url 'update_task' tasks.id %}">Update</a>
+            <a id="dlt" href="{% url 'delete_task' tasks.id %}">Delete</a> 
+        </div>
+
+        {% if tasks.complete == True %}
+            <p>    
+            <strike>
+                    {{ tasks }}
+
+                </strike>
+        {% else %}
+                <span>{{ tasks }}</span>
+        {%  endif %}
+            </p>
+    {% endfor %}
+</div>
+{% endblock %}

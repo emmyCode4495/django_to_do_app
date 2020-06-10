@@ -1,0 +1,17 @@
+{% extends 'Registration/base.html' %}
+
+{% block content %}
+<div id="login">
+    <form method="POST">
+        {% csrf_token %}
+        <h1 id="log-hd">Log in</h1>
+        {% for fields in form %}
+            <p>
+                {{ fields.label_tag }}
+                {{ fields }}
+            </p>
+        {% endfor %}
+        <button type="submit" id="lg-btn">Log in</button>
+    </form>
+</div>
+{% endblock %}

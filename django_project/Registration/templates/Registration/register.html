@@ -1,0 +1,22 @@
+{% extends 'Registration/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+    <div class="signup">
+        <form method="POST">
+            {% csrf_token %}
+                <h1 id="col">Sign up</h1>
+                    {% for fields in form %}
+                    <div id="form-edt">
+                        <p>
+                         {{ fields.label_tag }}
+                         {{ fields }}
+                         {{ fields.errors }}
+                        </p>
+                    </div>
+                    {% endfor %}
+                <button type="submit" id="sgn-btn">Sign up</button>
+        </form>
+    </div>    
+{% endblock %}
