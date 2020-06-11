@@ -1,6 +1,7 @@
+{% load static %}
 
 <h3>Do you wish to delete "{{items}}"?</h3>
-<a href="{% url 'add_task' %}">Cancel</a>
+<a id="cncl" href="{% url 'add_task' %}">Cancel</a>
 
 <form method="POST" action="">
     {% csrf_token %}
