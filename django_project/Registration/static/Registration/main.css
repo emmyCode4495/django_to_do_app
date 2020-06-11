@@ -16,7 +16,6 @@ body{
     border-radius: 10px;
 }
 
-
 .all-nav{
     border: 1px solid #ffffff;
     background-color: rgba(20,169,214,0.835);
@@ -133,15 +132,21 @@ ul#hor-list li{
 .signup::selection{
     color: #ffffff;
 }
+/* Login Page */
 #login{
     padding: 20px;
     border: 1px solid #000000;
     margin: 20px auto 20px auto;
     color: #ffffff;
     width: 400px;
-    height: 200px;
+    height: 250px;
     border-radius: 10px;
     background-color: rgba(20, 169, 214, 0.835);
+    letter-spacing: 0.1rem;
+}
+
+#clck{
+    text-decoration: none;
 }
 #log-hd{
     padding: 5px;
@@ -181,6 +186,19 @@ ul#hor-list li{
 #txt-box{
     width: 20px;
 }
+#lg-in{
+    text-decoration: none;
+    border: 1px inset #ffffff;
+    color: grey;
+    padding: 2px;
+}
+#lg-in:hover{
+    color: deeppink;
+}
+
+/* end of Login Page */
+
+/* Start of About Page */
 #abt-edt{
     border: 1px dotted rgba(20, 169, 214, 0.835);
     padding: 20px;
@@ -202,8 +220,18 @@ ul#hor-list li{
     text-align: left;
     color: rgba(20, 169, 214, 0.835);
 }
+/* End of About Page */
+
+/* start of Footer */
 .foot-intr{
     margin: 20px auto 20px auto;
     text-align: center;
     
 }
+/* End of footer */
+
+/* Start of Delete */
+#cncl{
+    text-decoration: none;
+}
+/* end of Delete phase */
